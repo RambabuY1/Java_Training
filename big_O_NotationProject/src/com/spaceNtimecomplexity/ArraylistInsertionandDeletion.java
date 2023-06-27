@@ -1,6 +1,7 @@
 package com.spaceNtimecomplexity;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.LinkedList;
 
 public class ArraylistInsertionandDeletion {
@@ -20,17 +21,22 @@ public class ArraylistInsertionandDeletion {
 			arraylist.add(i);
 			
 		}
+		System.out.println(arraylist.size());
 		endTime = System.nanoTime();
 		totalTime = endTime - startTime;
 		System.out.println("ArrayList Insertion time :"+ totalTime);
 		System.out.println("=========================================");
 		
 		//retrieve time complexity of ArrayList
+		
 		startTime = System.nanoTime();
 		
-			arraylist.get(99999);
+		for (Integer integer : arraylist) {
 			
-		//}
+		arraylist.get(integer);
+			
+		}
+	
 		endTime = System.nanoTime();
 		totalTime = endTime - startTime;
 		System.out.println("ArrayList retrieve time :"+totalTime);
@@ -39,9 +45,14 @@ public class ArraylistInsertionandDeletion {
 		//remove time complexity of ArrayList
 		
 		startTime = System.currentTimeMillis();
-		
-			arraylist.remove(99999);
+
+		Iterator<Integer> itr=arraylist.iterator();
+		while(itr.hasNext())	{
 			
+			itr.next();
+			
+				itr.remove();
+			}
 		
 		endTime = System.currentTimeMillis();
 		totalTime = endTime - startTime;
@@ -62,9 +73,11 @@ public class ArraylistInsertionandDeletion {
 		
 		//retrieve time complexity of LinkedList 
 		startTime = System.nanoTime();
-		
-			linkedlist.get(99999);
+		for (Integer integer : linkedlist) {
 			
+			linkedlist.get(integer);
+				
+		}
 		
 		endTime = System.nanoTime();
 		totalTime = endTime - startTime;
@@ -75,9 +88,12 @@ public class ArraylistInsertionandDeletion {
 		
 		startTime = System.nanoTime();
 		
+			Iterator<Integer> itr1 = linkedlist.iterator();
 			
-			linkedlist.remove(99999);
-			
+			while(itr1.hasNext()) {
+				itr1.next();
+				itr1.remove();
+			}
 		
 		endTime = System.nanoTime();
 		totalTime = endTime - startTime ;

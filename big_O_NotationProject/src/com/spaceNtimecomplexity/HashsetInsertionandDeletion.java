@@ -1,6 +1,7 @@
 package com.spaceNtimecomplexity;
 
 import java.util.HashSet;
+import java.util.Iterator;
 import java.util.TreeSet;
 
 public class HashsetInsertionandDeletion {
@@ -28,8 +29,12 @@ public class HashsetInsertionandDeletion {
 		
 		//deletion elements of HashSet time complexity
 				beforeTime = System.nanoTime();
-				
-					hashset.remove(99999);		
+				Iterator<Integer> itr = hashset.iterator();
+				while(itr.hasNext()) {
+					itr.next();
+					itr.remove();
+				}
+							
 				
 				afterTime = System.nanoTime();
 				totalTime = afterTime - beforeTime;
@@ -50,10 +55,11 @@ public class HashsetInsertionandDeletion {
 				
 				//deletion elements of TreeSet time complexity
 						beforeTime = System.nanoTime();
-						for (Integer integer : treeset) {
-							treeset.remove(99999);
+						Iterator<Integer> itr1 = treeset.iterator();
+						while(itr1.hasNext()) {
+							itr1.next();
+							itr1.remove();
 						}
-						
 						afterTime = System.nanoTime();
 						totalTime = afterTime - beforeTime;
 						System.out.println("TreeSet deletion time complexity :"+totalTime);

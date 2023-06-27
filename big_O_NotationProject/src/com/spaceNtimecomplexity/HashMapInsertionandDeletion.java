@@ -16,7 +16,7 @@ public class HashMapInsertionandDeletion {
 	      TreeMap<String, Integer> treemap = new TreeMap<>();
 	      
 	      beforeTime = System.nanoTime();
-	      for(int i =0; i<100000; i++) {
+	      for(int i =0; i<10; i++) {
 	    	  hashmap.put("i", i);
 	      }
 	      afterTime = System.nanoTime();
@@ -26,7 +26,10 @@ public class HashMapInsertionandDeletion {
 	      //Remove time complexity of HashMap
 	      
 	      beforeTime = System.nanoTime();
-	      hashmap.remove(100000);
+	      for(int i=0; i<10; i++) {
+	     //hashmap.remove(i);
+	      System.out.println(hashmap.remove("i"));
+	      }
 	      afterTime = System.nanoTime();
 	      totalTime = afterTime - beforeTime;
 	      System.out.println("Remove elements time complexity of HashMap :"+totalTime);
@@ -44,16 +47,14 @@ public class HashMapInsertionandDeletion {
 	      //remove elements time complexity of TreeMap
 	      
 	      beforeTime = System.nanoTime();
-	      treemap.remove(100000);
+	      treemap.remove("i", 99999);
 	      afterTime = System.nanoTime();
 	      totalTime = afterTime - beforeTime;
 	      System.out.println("deletion time complexity of TreeMap :"+totalTime);
 	      
 	      
 	      
-	      
 		}
 		
 	
-
 }
